@@ -41,3 +41,9 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+
+#ingore the deployment secret files 
+deployment/aws-secret.yaml
+deployment/env-secret.yaml
+deployment/env-configmap.yaml
