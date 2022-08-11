@@ -25,7 +25,7 @@ jobs:
             docker tag udagram-frontend udoeng/udagram-frontend:v3
             echo "-------- All images succesfully built----------"
             echo " ------- login in to hub--------"
-            docker login -u udoeng -p $DOCKER_PASSWORD
+            echo "$DOCKER_PASSWORD" | docker login -u udoeng --password-stdin
             echo "-------------- Pushing images to dockerhub-------"
             
             docker push udoeng/udagram-frontend:v3
