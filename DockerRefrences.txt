@@ -1,0 +1,15 @@
+Command to Build images 
+
+docker build <build-context>
+
+
+Note the build context 
+should be a folder containing
+ a Dockerfile with image configuration and build instructions 
+
+
+ Command to build tag a remote repo on dockerhub and push to repo 
+
+ # Run these commands from the /udagram-frontend directory
+docker build . -t [Dockerhub-username]/udagram-frontend:v6
+docker push [Dockerhub-username]/udagram-frontend:v6

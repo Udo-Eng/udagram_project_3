@@ -1,0 +1,60 @@
+Run command to encrpyt your credentials data into base64 
+Use a combination of head/tail command to identify lines you want to convert to base64
+You just need two correct lines: a right pair of aws_access_key_id and aws_secret_access_key
+cat ~/.aws/credentials | tail -n 5 | head -n 2
+Convert 
+cat ~/.aws/credentials | tail -n 5 | head -n 2 | base64
+
+
+Command to deploy a cluster on Aws using eksctl tool 
+ eksctl  create cluster --name  micro-uda --region=us-east-2  --nodes-min=2 --nodes-max=3
+
+
+Run command to get nodes in the cluster 
+
+kubectl get nodes
+
+Deploy the various pods and services using kubectl tool
+kubectl apply -f deployment.yaml
+
+kubectl apply -f service.yaml
+
+Deploy the secrets and configuration services 
+
+kubectl apply -f env-secret.yaml
+kubectl apply -f aws-secret.yaml
+
+
+Deploy the  configuration services 
+
+kubectl apply -f env-configmap.yaml 
+
+
+Commands to view the pods and services Status 
+
+kubectl get pods 
+
+kubectl describe services 
+
+command to get detailed status of PODS RUNNING 
+
+kubectl get pods
+
+kubectl describe pod [pod-name]
+
+kubectl logs  <pod-name>
+
+
+Command to expose the reversepoxy and frontend application
+via an External IP address
+
+kubectl expose deployment <pod-name> --type=LoadBalancer --name=<service-name>
+
+
+Command to auto scale your pods 
+
+kubectl autoscale deployment backend-user --cpu-percent=70 --min=3 --max=5
+
+
+
+
