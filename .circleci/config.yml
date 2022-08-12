@@ -22,13 +22,13 @@ jobs:
             echo "--------- The images is Building ------------"
             
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-frontend udoeng/udagram-frontend:v3
+            docker tag udagram-frontend udoeng/udagram-frontend:v4
             echo "-------- All images succesfully built----------"
             echo " ------- login in to hub--------"
             echo "$DOCKER_PASSWORD" | docker login -u udoeng --password-stdin
             echo "-------------- Pushing images to dockerhub-------"
             
-            docker push udoeng/udagram-frontend:v3
+            docker push udoeng/udagram-frontend:v4
            
 workflows:
   default:
