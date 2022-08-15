@@ -53,7 +53,18 @@ kubectl expose deployment <pod-name> --type=LoadBalancer --name=<service-name>
 
 Command to auto scale your pods 
 
+kubectl autoscale deployment <DEPLOYMENT_NAME> --cpu-percent=<DESIRED_THRESHOLD> --min=<MIN_PODS> --max=<MAX_PODS>
+
 kubectl autoscale deployment backend-user --cpu-percent=70 --min=3 --max=5
+
+Command to view the ouput of autoscaling your application 
+
+kubectl get hpa
+
+
+Command to terminate or delete HPA  
+
+kubectl delete hpa <service-name> 
 
 
 Command to apply Metric measuring to your pods 
@@ -65,4 +76,8 @@ Command to verify that the metrics-server deployment is running the desired numb
 
 kubectl get deployment metrics-server -n kube-system
 
+
+Command to terminate or delete and existing pod 
+
+kubectl delete pod <pod-name> 
 

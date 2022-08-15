@@ -3,9 +3,26 @@ Command to Build images
 docker build <build-context>
 
 
+Build image: docker build .
+Run container with image:
+ docker run {image_id}
+ 
+  where image_id can be retrieved by running
+  docker images and found under the column IMAGE ID
+You can use the -d flag to run the container in the background. 
+
+This will enable you to run other commands in your terminal while the container is running.
+
+Remove container: docker kill {container_id} where container_id can be retrieved by running docker ps and found under the column CONTAINER ID
+
+
 Note the build context 
 should be a folder containing
  a Dockerfile with image configuration and build instructions 
+
+ to connect to a running docker instance run 
+
+ docker exec -it >CONTAINER-ID >
 
 
  Command to build tag a remote repo on dockerhub and push to repo 
